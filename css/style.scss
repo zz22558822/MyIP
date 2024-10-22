@@ -1,0 +1,194 @@
+// @import 'reset';
+
+html, body {
+    font-family: 'Noto Sans TC', sans-serif;
+    background: #2E2E2E;
+    margin: 0;
+    padding: 0;
+    color: #F0F0F0;
+    
+    // 定義滾動條樣式
+    &::-webkit-scrollbar {
+        width: 8px;
+    }
+    // 定義滑塊 內陰影+圓角
+    &::-webkit-scrollbar-thumb {
+        border-radius: 10px;
+        box-shadow: inset 0 0 5px rgba(240, 240, 240, 0.8);
+        background-color: rgba(255, 255, 255, 0.3);
+    }
+}
+
+.wrap {
+    max-width: 1024px;
+    margin: 0 auto;
+    padding: 20px;
+
+    .header {
+        text-align: center;
+        padding: 40px 20px;
+        background: #1A1A1A;
+        border-radius: 10px;
+        box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.5);
+        user-select:none;
+        -webkit-user-select:none;
+        -moz-user-select:none;
+        -webkit-user-drag:none;
+    
+        h1 {
+            font-size: 48px;
+            margin: 0;
+        }
+    }
+
+    .container {
+        text-align: center;
+        margin: 27px 0;
+        padding: 27px;
+        background: #333333;
+        border-radius: 10px;
+        box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.5);
+        user-select:none;
+        -webkit-user-select:none;
+        -moz-user-select:none;
+        -webkit-user-drag:none;
+    
+        h2{
+            margin: 0 0 25px 0;
+        }
+    
+        .IP {
+            display: inline-block;
+            font-size: 32px;
+            color: #00FF88;
+            margin: 0;
+            position: relative;
+            transition: all 0.2s;
+            cursor: pointer;
+    
+            &:hover{
+                transform: scale(1.1); //增加縮放效果
+            }
+        }
+    
+        .copy_hint {
+            display: none;
+            background-color: #333;
+            color: #fff;
+            padding: 8px;
+            letter-spacing: 3px;
+            border-radius: 8px;
+            position: absolute;
+            z-index: 1000;
+            font-size: 16px;
+            white-space: nowrap;
+            border: 2px solid #FFF;
+        }
+
+        .btn-group {
+            display: flex;
+            justify-content: space-between; // 將按鈕分開
+        
+            .btn {
+                flex: 1; // 讓每個按鈕平分容器
+                margin: 0 10px 10px; // 在按鈕之間增加邊距
+                padding: 12px 0; // 調整按鈕的上下內邊距
+                font-size: 22px;
+                color: #FFF;
+                background-color: #294236;
+                border: none;
+                border-radius: 10px;
+                cursor: pointer;
+                transition: background-color 0.3s ease;
+                box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.3);
+                letter-spacing: 3px;
+                font-weight: bold;
+                
+                &.Cloudflare:hover {
+                    background-color: #F28500;
+                }
+                &.Fast:hover {
+                    background-color: #E50914;
+                }
+                &.Speedtest:hover {
+                    background-color: #141526;
+                }
+                &.NTU:hover {
+                    background-color: #BB9532;
+                }
+        
+                .icon {
+                    width: auto; // 讓寬度自適應
+                    height: 1em; // 根據字體大小調整高度
+                    margin-right: 2px; // 文字和圖標之間的距離
+                    vertical-align: middle; // 垂直對齊
+                    user-select:none;
+                    -webkit-user-select:none;
+                    -moz-user-select:none;
+                    -webkit-user-drag:none;
+                }
+            
+                &:hover {
+                    background-color: #00CC6E;
+        
+                    // 將圖標背景反白
+                    // .icon{
+                    //     background: #FFF;
+                    // }
+                }
+            }
+        
+        }
+    }
+
+    .footer {
+        text-align: center;
+        background: #1A1A1A;
+        padding: 20px;
+        border-radius: 10px;
+        color: #AAAAAA;
+        box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.5);
+        user-select:none;
+        -webkit-user-select:none;
+        -moz-user-select:none;
+        -webkit-user-drag:none;
+
+        img{
+            margin: 0 0 0px;
+            width: 200px;
+            user-select:none;
+            -webkit-user-select:none;
+            -moz-user-select:none;
+            -webkit-user-drag:none;
+            @media (max-width: 767px) {
+                margin: 10px 0 5px;
+            }
+            @media (max-width: 414px) {
+                margin: 5px 0;
+            }
+        }
+        p {
+            margin: 0;
+        }
+    }
+
+}
+
+@media (max-width: 767px) {
+    .header h1 {
+        font-size: 36px;
+    }
+    .container {
+        padding: 20px;
+        h2 {
+            font-size: 28px;
+        }
+    }
+    .btn-group {
+        flex-direction: column;
+        .btn {
+            margin: 10px 0;
+        }
+    }
+
+}
