@@ -1,9 +1,72 @@
+@charset "UTF-8";
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: "";
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* 讓圖片自適應容器最大寬度 高度自動 */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* 全域設定 border box */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
 html, body {
   font-family: "Noto Sans TC", sans-serif;
   background: #2E2E2E;
   margin: 0;
   padding: 0;
   color: #F0F0F0;
+  line-height: normal;
 }
 html::-webkit-scrollbar, body::-webkit-scrollbar {
   width: 8px;
@@ -32,6 +95,7 @@ html::-webkit-scrollbar-thumb, body::-webkit-scrollbar-thumb {
 }
 .wrap .header h1 {
   font-size: 48px;
+  font-weight: 700;
   margin: 0;
 }
 .wrap .container {
@@ -48,10 +112,13 @@ html::-webkit-scrollbar-thumb, body::-webkit-scrollbar-thumb {
 }
 .wrap .container h2 {
   margin: 0 0 25px 0;
+  font-size: 24px;
+  font-weight: 700;
 }
 .wrap .container .IP {
   display: inline-block;
   font-size: 32px;
+  font-weight: 700;
   color: #00FF88;
   margin: 0;
   position: relative;
@@ -88,7 +155,7 @@ html::-webkit-scrollbar-thumb, body::-webkit-scrollbar-thumb {
   border: none;
   border-radius: 10px;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease, transform 0.1s ease, box-shadow 0.1s ease;
   box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.3);
   letter-spacing: 3px;
   font-weight: bold;
@@ -117,6 +184,26 @@ html::-webkit-scrollbar-thumb, body::-webkit-scrollbar-thumb {
 }
 .wrap .container .btn-group .btn:hover {
   background-color: #00CC6E;
+}
+.wrap .container .btn-group .btn:active {
+  transform: scale(0.96);
+  box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.5);
+}
+@media (max-width: 767px) {
+  .wrap .container .btn-group {
+    flex-direction: column;
+  }
+}
+@media (max-width: 767px) {
+  .wrap .container {
+    padding: 20px;
+  }
+}
+@media (max-width: 414px) {
+  .wrap .container {
+    padding-left: 0px;
+    padding-right: 0px;
+  }
 }
 .wrap .footer {
   text-align: center;
@@ -150,22 +237,4 @@ html::-webkit-scrollbar-thumb, body::-webkit-scrollbar-thumb {
 }
 .wrap .footer p {
   margin: 0;
-}
-
-@media (max-width: 767px) {
-  .header h1 {
-    font-size: 36px;
-  }
-  .container {
-    padding: 20px;
-  }
-  .container h2 {
-    font-size: 28px;
-  }
-  .btn-group {
-    flex-direction: column;
-  }
-  .btn-group .btn {
-    margin: 10px 0;
-  }
 }/*# sourceMappingURL=style.css.map */
